@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>免费漫画阅站-免费漫画阅站精选资源与阅读指南</title>
+    <meta name="description" content="免费漫画阅站精选推荐，涵盖日漫、国漫、韩漫等类型，提供安全稳定的在线阅读入口与实用指南，帮你找到真正免费且更新快的漫画平台。">
+    <meta name="keywords" content="免费漫画, 漫画阅站, 在线漫画, 免费阅读漫画, 漫画平台推荐">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background-color: #f7f9fc;
+            color: #1f2937;
+            line-height: 1.6;
+            padding: 0 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.03);
+            border-radius: 2rem 2rem 1rem 1rem;
+            overflow: hidden;
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        /* 头部与导航 */
+        .site-header {
+            background: linear-gradient(145deg, #ffffff 0%, #f2f6fe 100%);
+            padding: 1.5rem 2rem 0.8rem 2rem;
+            border-bottom: 1px solid #eef2f6;
+        }
+
+        .brand-nav {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            background: #3b82f6;
+            width: 36px;
+            height: 36px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.4rem;
+            box-shadow: 0 6px 12px rgba(59, 130, 246, 0.2);
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #0b1b33;
+        }
+
+        .logo-text span {
+            color: #3b82f6;
+        }
+
+        .main-nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: #334155;
+            font-weight: 500;
+            padding: 0.4rem 0.1rem;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s;
+        }
+
+        .main-nav a:hover {
+            color: #2563eb;
+            border-bottom-color: #2563eb;
+        }
+
+        /* 移动端导航调整 */
+        @media (max-width: 700px) {
+            .brand-nav {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.8rem;
+            }
+            .main-nav ul {
+                gap: 1.2rem;
+            }
+        }
+
+        /* 首屏 hero */
+        .hero-section {
+            background: #ffffff;
+            padding: 2.2rem 2rem 2rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid #eaf0f6;
+        }
+
+        .hero-section h1 {
+            font-size: 2.3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            color: #0f172a;
+            margin-bottom: 0.8rem;
+        }
+
+        .hero-section h1 .highlight {
+            color: #2563eb;
+            background: linear-gradient(145deg, #dbeafe, #eff6ff);
+            padding: 0 0.4rem;
+            border-radius: 12px;
+        }
+
+        .hero-desc {
+            font-size: 1.2rem;
+            color: #475569;
+            max-width: 720px;
+            margin: 0 auto 1.2rem auto;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: #eef2ff;
+            color: #2563eb;
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            border: 1px solid #cbd5e1;
+        }
+
+        /* 核心卡片区 */
+        .featured-section {
+            padding: 2rem 2rem 1.5rem 2rem;
+            background: #ffffff;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #0f172a;
+            border-left: 6px solid #3b82f6;
+            padding-left: 1rem;
+        }
+
+        .section-sub {
+            color: #64748b;
+            margin-bottom: 1.8rem;
+            margin-top: -0.2rem;
+            padding-left: 1.6rem;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.8rem;
+            margin-top: 0.8rem;
+        }
+
+        .card-item {
+            background: #f8fafc;
+            border-radius: 1.5rem;
+            padding: 1.5rem 1.2rem;
+            transition: all 0.2s ease;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 6px 12px -6px rgba(0, 0, 0, 0.05);
+        }
+
+        .card-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 18px 30px -12px rgba(59, 130, 246, 0.15);
+            border-color: #b7c9e2;
+            background: #ffffff;
+        }
+
+        .card-item h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+            color: #1e293b;
+        }
+
+        .card-item p {
+            color: #475569;
+            font-size: 0.98rem;
+            margin-bottom: 0.7rem;
+        }
+
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.8rem;
+        }
+
+        .tag {
+            background: #e6edf6;
+            padding: 0.2rem 0.8rem;
+            font-size: 0.8rem;
+            border-radius: 30px;
+            color: #1e3a5f;
+        }
+
+        /* 指南区块 */
+        .guide-section {
+            padding: 1rem 2rem 2rem 2rem;
+            background: #ffffff;
+            border-top: 1px solid #ecf1f7;
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .guide-item {
+            background: #f9fbfe;
+            border-radius: 1.2rem;
+            padding: 1.2rem 1.2rem 1.5rem 1.2rem;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .guide-item h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .guide-item p {
+            color: #334155;
+        }
+
+        .step-num {
+            background: #2563eb;
+            color: white;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        /* 注意事项 / FAQ */
+        .faq-section {
+            padding: 1rem 2rem 2rem 2rem;
+            background: #f8fafc;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #dde3ea;
+            padding: 1rem 0;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #1e293b;
+            margin-bottom: 0.4rem;
+        }
+
+        .faq-answer {
+            color: #334155;
+            padding-left: 0.5rem;
+        }
+
+        /* 页脚 */
+        .site-footer {
+            background: #0b1b2e;
+            color: #cbd5e1;
+            padding: 2rem 2rem 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .footer-inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 1.5rem;
+        }
+
+        .footer-copyright {
+            opacity: 0.8;
+            margin-top: 1.2rem;
+            border-top: 1px solid #1e3a5f;
+            padding-top: 1rem;
+            text-align: center;
+        }
+
+        /* 响应式微调 */
+        @media (max-width: 600px) {
+            .hero-section h1 {
+                font-size: 1.7rem;
+            }
+            .hero-section, .featured-section, .guide-section, .faq-section {
+                padding-left: 1.2rem;
+                padding-right: 1.2rem;
+            }
+            .card-grid {
+                gap: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- 页眉 + 导航 -->
+    <header class="site-header">
+        <div class="brand-nav">
+            <div class="logo-area">
+                <div class="logo-icon">漫</div>
+                <div class="logo-text">免费漫画<span>阅站</span></div>
+            </div>
+            <nav class="main-nav" aria-label="主导航">
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">漫画分类</a></li>
+                    <li><a href="#">新番更新</a></li>
+                    <li><a href="#">阅读指南</a></li>
+                    <li><a href="#">排行榜</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 首屏介绍 -->
+    <main>
+        <section class="hero-section">
+            <h1>免费漫画阅站<span class="highlight"> · 自由阅读不迷路</span></h1>
+            <p class="hero-desc">聚合高人气免费漫画站点与实用技巧，从日漫到国漫，安全、顺畅、每日更新。这里是你寻找免费漫画阅站的起点。</p>
+            <span class="hero-badge">🔥 今日推荐：5个稳定免费源</span>
+        </section>
+
+        <!-- 核心内容区：分类卡片 -->
+        <section class="featured-section">
+            <h2 class="section-title">📚 热门类型速览</h2>
+            <p class="section-sub">根据阅读偏好，快速找到适合你的免费漫画方向</p>
+            <div class="card-grid">
+                <article class="card-item">
+                    <h3>🔥 少年热血</h3>
+                    <p>战斗、友情、成长，经典Jump系与国漫热血作，免费阅站中更新最快。</p>
+                    <div class="tag-list">
+                        <span class="tag">航海王</span>
+                        <span class="tag">咒术回战</span>
+                        <span class="tag">一拳超人</span>
+                    </div>
+                </article>
+                <article class="card-item">
+                    <h3>🌸 少女·恋爱</h3>
+                    <p>高甜、虐心、纯爱，韩漫与日漫少女系资源丰富，适合碎片时间。</p>
+                    <div class="tag-list">
+                        <span class="tag">青春记录</span>
+                        <span class="tag"> honey blood</span>
+                    </div>
+                </article>
+                <article class="card-item">
+                    <h3>🧩 悬疑·智斗</h3>
+                    <p>高智商博弈、反转不断，免费站也能找到诸多冷门神作。</p>
+                    <div class="tag-list">
+                        <span class="tag">死亡笔记</span>
+                        <span class="tag">夏日重现</span>
+                    </div>
+                </article>
+                <article class="card-item">
+                    <h3>🐉 国漫·修仙</h3>
+                    <p>斗罗、完美世界等国漫精品，免费阅站同步更新，高清流畅。</p>
+                    <div class="tag-list">
+                        <span class="tag">斗破苍穹</span>
+                        <span class="tag">仙逆</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 详细说明+步骤指南 -->
+        <section class="guide-section">
+            <h2 class="section-title">🧭 免费阅站使用指南</h2>
+            <p class="section-sub">三步开启顺畅阅读，避开无效站点</p>
+            <div class="guide-grid">
+                <div class="guide-item">
+                    <h3><span class="step-num">1</span> 选择可靠平台</h3>
+                    <p>优先选择有备案、界面无恶意弹窗、更新稳定的阅站。可参考口碑或书友推荐。免费漫画阅站的核心是稳定。</p>
+                </div>
+                <div class="guide-item">
+                    <h3><span class="step-num">2</span> 搜索与订阅</h3>
+                    <p>利用站内搜索找到漫画，加入书架或开启更新提醒。多数免费阅站支持评论与追更。</p>
+                </div>
+                <div class="guide-item">
+                    <h3><span class="step-num">3</span> 阅读与缓存</h3>
+                    <p>开启“阅读模式”使排版更清爽，部分阅站支持下载缓存，离线也能看。</p>
+                </div>
+                <div class="guide-item">
+                    <h3><span class="step-num">4</span> 注意版权与安全</h3>
+                    <p>建议不要点击来源不明的广告，不要输入个人信息。支持正版，但免费阅站可作为尝鲜渠道。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 优势/注意事项 混合区块 -->
+        <section class="featured-section" style="padding-top:0.5rem;">
+            <h2 class="section-title">✅ 免费阅站的优势与取舍</h2>
+            <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 1.2rem;">
+                <ul style="flex:1; min-width: 200px; list-style: none;">
+                    <li style="margin-bottom: 0.8rem;">✔️ 完全免费，无订阅门槛</li>
+                    <li style="margin-bottom: 0.8rem;">✔️ 更新速度快，人气漫画同步</li>
+                    <li style="margin-bottom: 0.8rem;">✔️ 无需下载APP，网页即点即看</li>
+                </ul>
+                <ul style="flex:1; min-width: 200px; list-style: none;">
+                    <li style="margin-bottom: 0.8rem;">⚠️ 部分站点含广告，注意辨别</li>
+                    <li style="margin-bottom: 0.8rem;">⚠️ 画质可能低于正版源</li>
+                    <li style="margin-bottom: 0.8rem;">⚠️ 资源可能被下架，建议保存多站</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 常见问题 FAQ -->
+        <section class="faq-section">
+            <h2 class="section-title" style="border-left-color: #f59e0b;">❓ 读者高频提问</h2>
+            <div class="faq-item">
+                <div class="faq-question">Q：免费漫画阅站真的完全免费吗？</div>
+                <div class="faq-answer">绝大多数漫画资源可以免费阅读，但部分平台会插入广告或限制高清画质。符合“免费阅站”定义的大多不需要付费，但要注意不要误开会员。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q：如何判断一个免费漫画站是否安全？</div>
+                <div class="faq-answer">观察是否有大量诱导下载、自动跳转、或要求登录。建议直接用浏览器打开并留意地址栏，使用广告拦截插件可以提升体验。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q：哪些免费漫画阅站更新最快？</div>
+                <div class="faq-answer">通常人气较高的平台如“动漫之家”“扑飞漫画”等（仅作举例）更新比较及时。也可以关注漫画官方社交号，获取同步消息。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q：手机上看漫画，有没有推荐的阅站格式？</div>
+                <div class="faq-answer">优先选择自适应网页或带“夜间模式”的阅站。部分站点提供“双页模式”或“卷纸模式”，适合手机阅读。</div>
+            </div>
+        </section>
+
+        <!-- 相关主题 (轻量内链) -->
+        <section style="padding: 1rem 2rem 2rem; background: #fdfdff;">
+            <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem;">🔗 你可能还关注</h3>
+            <p style="color: #3b82f6; display: flex; flex-wrap: wrap; gap: 1.5rem;">
+                <span>韩漫免费入口</span>
+                <span>国漫更新表</span>
+                <span>漫画APP替代</span>
+                <span>漫画下载技巧</span>
+            </p>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div>
+                <strong style="color:white; font-size:1.2rem;">免费漫画阅站·指南</strong>
+                <p style="margin-top:0.3rem;">发现优质免费漫画，分享实用阅读方法。内容仅供学习交流。</p>
+            </div>
+            <div>
+                <p>📮 联系与合作：dm@example.com</p>
+                <p>📌 免责声明：部分资源来自网络，版权归原作者。</p>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            © 2025 免费漫画阅站 收集实用信息 · 请支持正版漫画
+        </div>
+    </footer>
+</div>
+<!-- 此处为指定的广告脚本 -->
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+</html>
